@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   })
 
   export class VehicleSession {
+    //can not get these properties to bind with the component? commented out the ones I don't need yet. Look at app.component.ts and you'll see a simlar thing, but the property in there does bind?
     name: 'Chuckles';
     overPriceOrWeight: false;
     // nothingToRemove: true;
