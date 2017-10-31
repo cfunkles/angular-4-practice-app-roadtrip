@@ -1,10 +1,10 @@
-<div class="container-fluid center" [class.errorState]="overPriceOrWeight">
-    <h2>Welcome {{name}} to your awesome Roadtrip!</h2>
+<div class="container-fluid center" [class.errorState]="vehicleSession.overPriceOrWeight">
+    <h2>Welcome {{vehicleSession.username}} to your awesome Roadtrip!</h2>
     <div class="row">
         <div class="col-xs-6" >
-            <h3>You have ${{money}} and {{weight}} LBS</h3>
+            <h3 *ngIf="vehicle">You have ${{vehicleSession.money}} and {{vehicleSession.weight}} LBS</h3>
             <h4>Select What You Want To Bring in your
-                <select name="vehicle">
+                <select name="vehicle" [(ngModel)]="vehicleSession.vehicle">
                     <option disabled selected>Select Vehicle</option>
                     <option value='JEEP XJ'>JEEP XJ</option>
                     <option value='Pickle'>Pickle</option>
@@ -12,13 +12,15 @@
                 </select>
             </h4>
         </div>
-        <div class="col-xs-6">
-            <h3>Your {{vehicle}} is carring</h3>
-            <!-- <h4 *ngIf="itemsInV" *ngFor="let itemName of itemsInV">{{itemName}}</h4> -->
+        <div *ngIf="vehicleSession.vehicle" class="col-xs-6">
+            <h3>Your {{vehicleSession.vehicle}}<span *ngIf="vehicleSession.itemsInV.length"> has</span><span *ngIf="vehicleSession.itemsInV.length === 0"> is empty</span></h3>
+            <ng-container *ngIf="vehicleSession.itemsInV">
+                <h4 *ngFor="let itemName of vehicleSession.itemsInV" >{{itemName}}</h4>
+            </ng-container>
         </div>
     </div>
     <div class="row">
-        <!-- <vehicle-item *ngFor="let item of items" vehicle=vehicle nothingToRemove=nothingToRemove imageLink=item.image name=item.name money=item.munnies weight=item.weight></vehicle-item> -->
+        <vehicle-item></vehicle-item>
     </div>
 </div>
 

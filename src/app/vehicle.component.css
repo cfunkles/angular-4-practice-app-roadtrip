@@ -1,0 +1,8 @@
+.center {
+    text-align: center;
+}
+
+.errorState {
+    background-image: url('https://media.giphy.com/media/13hi1TSLrVqjeM/giphy.gif');
+    color: chartreuse;
+}
