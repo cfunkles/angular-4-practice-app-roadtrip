@@ -1,0 +1,10 @@
+<section *ngFor="let item of itemsArr">
+    <div class="col-xs-2 well">
+        <img class="img-responsive img-thumbnail" [src]="item.image">
+        <h5>{{item.name}}</h5>
+        <p>Cost: ${{item.munnies}}</p>
+        <p>Weigth: {{item.weight}} LBS</p>
+        <button class="btn btn-primary" (click)="addToCar(item.munnies, item.weight)">Add</button>
+        <button class="btn btn-danger" (click)="removeFromCar(item.munnies, item.weight)">Remove</button>
+    </div>
+</section>
