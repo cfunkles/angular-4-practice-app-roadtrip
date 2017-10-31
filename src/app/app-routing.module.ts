@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginPage } from './login.component';
 import { VehicleSession } from './vehicle.component';
+import { VehicleItemComponent } from './vehicle-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
